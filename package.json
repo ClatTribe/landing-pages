@@ -1,0 +1,12 @@
+{
+  "name": "landing-pages",
+  "version": "1.0.0",
+  "description": "EduAbroad Landing Pages",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

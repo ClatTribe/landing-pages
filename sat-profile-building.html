@@ -446,6 +446,7 @@
         btn.style.background = '#16a34a';
         btn.style.borderRadius = '12px';
         this.reset();
+        window.location.href = 'thank-you-sat.html';
       } else {
         const err = await res.text();
         console.error('Supabase error:', res.status, err);
