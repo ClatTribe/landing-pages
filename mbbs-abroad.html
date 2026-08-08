@@ -366,6 +366,10 @@
 
   document.querySelector('form').addEventListener('submit', async function(e) {
     e.preventDefault();
+    if (!this.checkValidity()) {
+      this.reportValidity();
+      return;
+    }
     const btn = this.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
     btn.innerHTML = 'Submitting…';

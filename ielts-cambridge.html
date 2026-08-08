@@ -141,11 +141,11 @@ India's <strong style="color: #0a0a0a; font-weight: 800;">#1 study abroad consul
 </div>
 <h3 style="font-size: clamp(18px,2vw,22px); font-weight: 800; color: #0a0a0a; margin: 0 0 4px; letter-spacing: -0.5px;">Get Your <em style="color:#af0100; font-style:normal;">Cambridge Study Kit</em> Free</h3>
 <p style="font-size: 13px; color: #666; margin: 0 0 16px;">2026–2028 intakes &nbsp;·&nbsp; Respond within 24 hrs</p>
-<form novalidate style="display: flex; flex-direction: column; gap: 10px;">
+<form style="display: flex; flex-direction: column; gap: 10px;">
 <input class="form-input" name="name" type="text" placeholder="Your Full Name" required>
 <input class="form-input" name="phone" type="tel" placeholder="WhatsApp Number" required>
 <input class="form-input" name="email" type="email" placeholder="Email Address" required>
-<select class="form-input" name="target">
+<select class="form-input" name="target" required>
 <option value="" disabled selected>Target Exam</option>
 <option>IELTS Academic</option>
 <option>IELTS General Training</option>
@@ -153,7 +153,7 @@ India's <strong style="color: #0a0a0a; font-weight: 800;">#1 study abroad consul
 <option>TOEFL iBT</option>
 <option>Duolingo English Test</option>
 </select>
-<select class="form-input" name="band">
+<select class="form-input" name="band" required>
 <option value="" disabled selected>Target Band / Score</option>
 <option>IELTS 6.0–6.5</option>
 <option>IELTS 7.0–7.5</option>
@@ -468,6 +468,10 @@ var TABLE = 'ielts_leads';
 document.querySelectorAll('form').forEach(function(form) {
 form.addEventListener('submit', async function(e) {
 e.preventDefault();
+if (!this.checkValidity()) {
+  this.reportValidity();
+  return;
+}
 var btn = this.querySelector('button[type="submit"]');
 var original = btn ? btn.innerHTML : '';
 if (btn) { btn.innerHTML = 'Submitting…'; btn.disabled = true; }
